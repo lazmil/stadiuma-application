@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?2zmgzr');
+  src:  url('fonts/icomoon.eot?2zmgzr#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2zmgzr') format('truetype'),
+    url('fonts/icomoon.woff?2zmgzr') format('woff'),
+    url('fonts/icomoon.svg?2zmgzr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Menu:before {
+  content: "\e902";
+}
+.icon-instagram:before {
+  content: "\e901";
+  color: #e4405f;          /* Also define standard property for compatibility */
+}
+.icon-twitter:before {
+  content: "\e900";
+  color: #03A9F4;
+}
+.icon-icon:before {
+  content: "\e904";
+  color: #178a1f;
+}
+.icon-stadium:before {
+  content: "\e905";
+  color: #178a1f;
+}
+.icon-massage:before {
+  content: "\e906";
+  color: #178a1f;
+}
+.icon-medal:before {
+  content: "\e907";
+  color: #178a1f;
+}
+.icon-facebook:before {
+  content: "\ea91";
+  color: #1976D2;
+}

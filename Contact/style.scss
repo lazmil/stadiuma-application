@@ -1,0 +1,317 @@
+//font-sizes
+$btnSize: 21px;
+$nameSize: 52px;
+$titleSize: 52px;
+$homeTexts: 16px;
+$headerTitle: 20px;
+$socialIconSize: 35px;
+$footerTextSize: 23px;
+$headerListsSize: 14px;
+
+//colors
+$headerBackground: #f7f7f7;
+$headerTitleColor: #000000;
+$headerLink: #d5d5d5;
+$snow: #ffffff;
+$btnBackground: #178a1f;
+$btnHover: #206725;
+$inputBorder: #d3d3d3;
+$error: red;
+$text: #101010;
+
+//mixin
+
+@mixin screen($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+
+  @include screen(767px) {
+  }
+
+  .header-container {
+    width: 100%;
+    padding: 33px 0;
+    max-height: 116px;
+    transition: max-height 0.5s;
+    background-color: $headerBackground;
+
+    .header {
+      width: 100%;
+      display: flex;
+      padding: 0 43px;
+      align-items: center;
+      background-color: $headerBackground;
+
+      .headerMenuIcon {
+        position: absolute;
+        right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 9px;
+        border: 1px solid #d3d3d3;
+        cursor: pointer;
+        display: none;
+
+        @include screen(767px) {
+          display: flex;
+        }
+      }
+
+      .title {
+        font-weight: 600;
+        text-decoration: none;
+        font-size: $headerTitle;
+        color: $headerTitleColor;
+      }
+
+      .links {
+        font-size: $headerListsSize;
+        @include screen(767px) {
+          display: none;
+        }
+
+        .link {
+          margin-left: 43px;
+          font-weight: 300;
+          font-size: $headerTitle;
+          text-decoration: none;
+          cursor: pointer;
+          color: $headerLink;
+        }
+
+        .linkDownload {
+          color: $headerLink;
+        }
+
+        .linkContact {
+          color: $headerTitleColor;
+        }
+      }
+    }
+
+    .header-menu-list {
+      opacity: 0;
+      max-height: 0;
+      transition: all 0.5s;
+      padding: 8px 0 5px 43px;
+
+      .header-menu-item {
+        transition: all 0.5s;
+        padding-bottom: 5px;
+        overflow: hidden;
+        color: #000000;
+        list-style: none;
+        max-height: 0;
+
+        .link {
+          color: $headerLink;
+          font-size: $headerTitle;
+          text-decoration: none;
+          font-weight: 300;
+          cursor: pointer;
+        }
+
+        .linkDownload {
+          color: $headerTitle;
+        }
+        .linkContact {
+          color: $headerTitleColor;
+        }
+      }
+    }
+  }
+
+  .whiteZone {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 80px;
+
+    .titleAbout {
+      font-size: $titleSize;
+      font-family: "Open Sans";
+      font-weight: 600;
+    }
+
+    .lineGreen {
+      width: 100px;
+      height: 1px;
+      background-color: $btnBackground;
+      margin: 20px auto;
+    }
+
+    .centralText {
+      width: 71%;
+      font-size: 33px;
+      font-family: "Open Sans";
+      font-weight: 300;
+      margin: 20px auto;
+      color: $text;
+
+      @include screen(767px) {
+        font-size: 21px;
+        margin: 10px auto;
+      }
+    }
+  }
+
+  .forInputs {
+    width: 71%;
+    margin: 30px auto;
+
+    .input {
+      width: 100%;
+      height: 50px;
+      padding: 10px;
+      margin: 7px 0;
+      font-size: 20px;
+      font-family: "Open Sans";
+      font-weight: 600;
+      border: 2px solid $inputBorder;
+      -webkit-transition: 0.5s;
+      transition: border 0.5s;
+      outline: none;
+
+      @include screen(767px) {
+        height: 43px;
+      }
+      &:focus {
+        border: 2px solid $btnBackground;
+      }
+      &:placeholder {
+        color: $inputBorder;
+      }
+      .error {
+        color: $error;
+      }
+    }
+    .inputMes {
+      height: 100px;
+      padding: 0 10px 40px 10px;
+    }
+
+    .button {
+      width: 271px;
+      color: $snow;
+      background-color: $btnBackground;
+      border: 3px solid $btnBackground;
+      padding: 10px 0;
+      font-family: "Open Sans";
+      font-size: 14px;
+      font-weight: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      margin: 7px 0;
+      &:hover {
+        background-color: $btnHover;
+        border: 3px solid $btnHover;
+      }
+
+      @include screen(767px) {
+        width: 100%;
+      }
+    }
+  }
+  .footer {
+    width: 100%;
+    background-color: #f7f7f7;
+    padding: 20px 0 40px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .footerCenter {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+
+      @include screen(767px) {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 80%;
+      }
+
+      .goTo {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+
+        .linkTo {
+          display: block;
+          text-decoration: none;
+          color: black;
+          font-size: $headerTitle;
+          font-weight: 600;
+          text-align: left;
+
+          &:hover {
+            color: #178a1f;
+          }
+        }
+      }
+      .social {
+        gap: 30px;
+        display: flex;
+        align-items: center;
+        @include screen(767px) {
+          // gap: 50px;
+          width: 40%;
+          gap: 20px;
+          justify-content: space-between;
+        }
+
+        @include screen(500px) {
+          width: 100%;
+        }
+        .socialIcon {
+          font-size: $socialIconSize;
+          text-decoration: none;
+        }
+      }
+    }
+    .footerText {
+      margin: 0 auto;
+      font-size: $footerTextSize;
+      font-weight: 600;
+
+      @include screen(767px) {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+.header-container-active {
+  .header-container {
+    max-height: 182px;
+
+    .header-menu-list {
+      opacity: 1;
+      max-height: 110px;
+
+      .header-menu-item {
+        max-height: 40px;
+      }
+    }
+  }
+}
